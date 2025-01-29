@@ -1,8 +1,10 @@
+
+
 import java.util.Scanner;
 public class LinkedList {
     class Node {
 int data;
-              	Node next;
+               Node next;
     public Node(int data) {
 this.data = data;
 this.next = null;
@@ -17,7 +19,7 @@ public void addNode(int data) {
         if (head == null) {
             head = newNode;
             tail = newNode;
-        }		 else {
+        } else {
 tail.next = newNode;
               tail = newNode;
         }
@@ -37,9 +39,14 @@ list.displayList();
 System.out.println("Length of the Linked List is:"+list.length());
 scanner.close();
     }
-int length() 
-    {
-  //Type your code here
+int length() {
+        int count = 0;
+        Node current = head;
+        while (current != null) {
+            count++;
+            current = current.next;
+        }
+        return count;
     }
 public void displayList() {
        Node current = head;
